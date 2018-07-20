@@ -1,0 +1,17 @@
+<?php
+	if(isset($_SESSION["user"]))
+	{
+		if(isset($_SESSION["phanquyen"]))
+		{
+			$phanquyen=$_SESSION["phanquyen"];
+			if($phanquyen==1)
+			{
+				header("location:DanhSachAdminThuong.php");
+			}
+			if($phanquyen==2)
+			{
+				header("location:../AdminThuong/index.php");
+			}
+		}
+	}
+?>

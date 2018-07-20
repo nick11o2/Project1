@@ -1,0 +1,12 @@
+<?php
+	if(!isset($_SESSION["user"]))
+	{
+		header("location:../AdminTong/LoginAdmin.php");
+	}
+	if(($_SESSION["phanquyen"]==3))
+	{
+		unset($_SESSION["user"]);
+		unset($_SESSION["phanquyen"]);
+		header("location:../AdminTong/LoginAdmin.php");
+	}
+?>

@@ -1,0 +1,29 @@
+<?php
+session_start();
+if(isset($_GET["maSP"]))
+{
+	$maSP=$_GET["maSP"];
+	if(isset($_SESSION["gioHang"]))
+	{
+		if(isset($_SESSION["gioHang"][$maSP]))
+		{
+			$_SESSION["gioHang"]["$maSP"]++;
+		}
+		else
+		{
+			$_SESSION["gioHang"]["$maSP"]=1;
+		}
+	}else
+	{
+		$_SESSION["gioHang"]=array();
+		$_SESSION["gioHang"]["$maSP"]=1;
+	}
+	header("location:Danhsachsanpham.php");
+			
+}else
+{
+	?>
+    <meta http-equiv="refresh" content="0,Danhsachsanpham.php" />
+    <?php
+}
+?>
